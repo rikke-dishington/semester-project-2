@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Listings" />
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script defer type="module" src="js/pages/listings.js"></script>
+        <title>Discover or add a new listing</title>
+    </head>
+  <body>
+    <header class="bg-primary">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="feed.html">SoMe</a>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="feed.html">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="profile.html">Profile</a>
+            </li>
+          </ul>
+          <a
+            class="btn btn-light text-primary"
+            href="new-post.html"
+            role="button"
+            >New Post</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1>Feed</h1>
+          </div>
+          <div class="col-12 text-center">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididu.
+            </p>
+          </div>
+          <div class="row">
+            <div class="col mt-4">
+              <label for="search">Search:</label>
+              <input type="text" id="searchInput" placeholder="Search..." />
+              <button class="btn btn-primary" id="searchButton">Search</button>
+            </div>
+            <div class="col mt-4">
+              <label for="tagFilter">Filter by Tag:</label>
+              <input type="text" id="tagFilter" placeholder="Enter a tag" />
+              <button id="tagFilterButton" class="btn btn-primary">
+                Filter
+              </button>
+            </div>
+          </div>
+          <div class="row row-cols-4 m-4" id="all-posts"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-primary text-center text-light p-2">© SoMe 2023</footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
