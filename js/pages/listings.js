@@ -25,7 +25,7 @@ function displayPosts(posts) {
     postElement.classList.add("row", "my-4");
     postElement.innerHTML = `
         <img src="${media}" class="img-fluid" />
-        <a href="post.html?id=${id}"
+        <a href="listing.html?id=${id}"
         <h3>${title}</h3>
         <p>#${tags}</p>
         <p>${endsAt}</p>
