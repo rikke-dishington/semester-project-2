@@ -27,14 +27,25 @@ async function getPost() {
     const data = await response.json();
     const { title, description, tags, media, endsAt, bids } = data;
 
+    const formattedDate = new Date(endsAt).toLocaleDateString(undefined, {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+    
+    const formattedTime = new Date(endsAt).toLocaleTimeString(undefined, {
+      hour: 'numeric',
+      minute: '2-digit',
+    });
+
     const postElement = document.createElement("div");
     postElement.classList.add("listing-details");
     postElement.innerHTML = `
       <img src="${media}" class="img-fluid" />
       <h1>${title}</h1>
-      <p>#${tags}</p>
+      <p>${tags}</p>
       <p>${description}</p>
-      <p>${endsAt}</p>
+      <p>Deadline: ${formattedDate} ${formattedTime}</p>
     `;
 
     const bidsContainer = document.createElement("div");
