@@ -20,7 +20,7 @@ import { API_BASE_URL } from "/js/api/api_base_url.js";
        const accessToken = json.accessToken;
        localStorage.setItem("accessToken", accessToken);
        console.log(json);
-       window.location.href = "/feed.html";
+       window.location.href = "/listings.html";
      } else if (response.status === 401) {
        errorMessageElement.textContent =
          "User does not exist or invalid email/password.";
