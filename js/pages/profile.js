@@ -79,3 +79,6 @@ function updateProfileLink() {
 
     updateProfileLink();
 }
+
+//  <button class="btn btn-primary" id="edit-post-button">Edit Post</button>
+// <button class="btn btn-danger" id="delete-post-button">Delete Post</button>
