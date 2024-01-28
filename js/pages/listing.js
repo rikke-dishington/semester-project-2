@@ -25,17 +25,39 @@ async function getPost() {
     }
 
     const data = await response.json();
-    const { title, tags, media } = data;
+    const { title, description, tags, media, endsAt, bids } = data;
 
     const postElement = document.createElement("div");
-    postElement.classList.add("col", "my-4");
+    postElement.classList.add("listing-details");
     postElement.innerHTML = `
-        <img src="${media}" class="img-fluid" />
-        <h1>${title}</h1>
-        <p>#${tags}</p>
-        <button class="btn btn-primary" id="edit-post-button">Edit Post</button>
-        <button class="btn btn-danger" id="delete-post-button">Delete Post</button>
-      `;
+      <img src="${media}" class="img-fluid" />
+      <h1>${title}</h1>
+      <p>#${tags}</p>
+      <p>${description}</p>
+      <p>${endsAt}</p>
+    `;
+
+    const bidsContainer = document.createElement("div");
+    bidsContainer.classList.add("bids-container");
+
+    if (Array.isArray(bids) && bids.length > 0) {
+      bids.forEach((bid) => {
+        const bidElement = document.createElement("div");
+        bidElement.innerHTML = `
+          <p>Bidder: ${bid.bidderName}</p>
+          <p>Amount: ${bid.amount}</p>
+          <p>Created: ${new Date(bid.created).toLocaleString()}</p>
+        `;
+        bidsContainer.appendChild(bidElement);
+      });
+    } else {
+      // Handle the case where there are no bids
+      const noBidsElement = document.createElement("p");
+      noBidsElement.textContent = "No bids available.";
+      bidsContainer.appendChild(noBidsElement);
+    }
+
+    postElement.appendChild(bidsContainer);
 
     postContainer.appendChild(postElement);
   } catch (error) {
