@@ -18,8 +18,6 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 * [Usage](#usage)
 * [Testing](#testing)
 
-## Workflow Status Badges
-
 ## Requirements
 
 ### User stories
