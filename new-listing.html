@@ -4,59 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="New listing" />
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="dist/css/styles.css" />
     <script defer type="module" src="js/pages/create_listing.js"></script>
     <title>Publish a new listing</title>
   </head>
-  <body>
-    <header class="bg-primary">
-      <nav class="navbar navbar-expand-lg">
+  <body class="bg-light">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="listings.html">Auction</a>
+          <a class="navbar-brand text-light" href="index.html">Auction</a>
           <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link text-light" href="listings.html">Listings</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="profile.html">Profile</a>
-              </li>
-            </ul>
-            <a class="btn btn-light text-primary" href="new-listing.html" role="button">New Post</a>
-          </div>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="index.html">Listings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#" id="profile-link">Profile</a>
+            </li>
+          </ul>
+          <a
+            class="btn btn-light text-primary"
+            href="new-listing.html"
+            role="button"
+            >New Listing</a
+          >
+        </div>
       </nav>
     </header>
     <main>
-      <div class="container mt-5 mb-5">
-        <div class="row">
-          <div class="col-12 bg-primary text-light p-4">
-            <form class="mx-auto" style="max-width: 400px;" id="newPostForm">
-              <h2>New Post</h2>
-              <div class="mb-3">
-                <label for="postTitle" class="form-label">* Title:</label>
-                <input class="form-control border border-light" type="text" id="postTitle" placeholder="Title..." required>
+      <div class="container new-listing-container">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-1">
+          <div class="col bg-primary text-light pt-5 pb-5">
+            <form class="mx-auto" style="max-width: 400px;" id="newListingForm">
+              <h2 class="mb-4">Create a new listing</h2>
+              <div class="mb-4">
+                <label for="listingTitle" class="form-label">* Title:</label>
+                <input 
+                class="form-control border border-light" 
+                type="text" id="listingTitle" 
+                placeholder="Title..." 
+                required
+                >
               </div>
-              <div class="mb-3">
-                <label for="postDescription" class="form-label">Description:</label>
-                <textarea class="form-control border border-light" id="postDescription" rows="3" placeholder="Description..."></textarea>
+              <div class="mb-4">
+                <label for="listingDescription" class="form-label">* Description:</label>
+                <textarea 
+                class="form-control border border-light" 
+                id="listingDescription" 
+                rows="3" 
+                placeholder="Description...">
+              </textarea
+              >
               </div>
-              <div class="mb-3">
-                <label for="postEndsAt" class="form-label">* Deadline:</label>
-                <input class="form-control border border-light" type="datetime-local" id="postEndsAt" required>
+              <div class="mb-4">
+                <label for="listingEndsAt" class="form-label">* Deadline:</label>
+                <input 
+                class="form-control border border-light" 
+                type="datetime-local" 
+                id="listingEndsAt" 
+                required
+                >
               </div>
-              <div class="mb-3">
-                <label for="postTag" class="form-label">Tag:</label>
-                <input class="form-control border border-light" type="text" id="postTag" placeholder="Tag...">
+              <div class="mb-4">
+                <label for="listingTag" class="form-label">Tag:</label>
+                <input 
+                class="form-control border border-light" 
+                type="text" id="listingTag" 
+                placeholder="Tag..."
+                >
               </div>
-              <div class="mb-3">
-                <label for="postImage" class="form-label">Image:</label>
-                <input class="form-control border border-light" type="text" id="postImage" placeholder="Image URLs (comma-separated)">
+              <div class="mb-4">
+                <label for="listingImage" class="form-label">* Image:</label>
+                <input 
+                class="form-control border border-light" 
+                type="text" 
+                id="listingImage" 
+                placeholder="Image URLs (comma-separated)" 
+                required
+                >
               </div>
-              <button class="btn btn-light text-primary border border-light btn-block" id="newPostButton">Publish</button>
+              <button class="btn btn-light text-primary border border-light btn-block mt-2" id="newListingButton">Publish</button>
             </form>
           </div>
     </main>
-    <footer class="bg-primary text-center text-light p-2">©BrandName 2023</footer>
+    <footer class="bg-primary text-center text-light p-3">© Auction 2024</footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

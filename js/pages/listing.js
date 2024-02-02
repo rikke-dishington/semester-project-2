@@ -1,4 +1,3 @@
-
 import { API_BASE_URL } from "/js/api/api_base_url.js";
 
 const queryString = document.location.search;
@@ -10,7 +9,7 @@ const token = localStorage.getItem("accessToken");
 
 const postContainer = document.getElementById("post-container");
 
-async function getPost() {
+async function getListing() {
   try {
     const response = await fetch(API_POST_URL, {
       method: "GET",
@@ -38,18 +37,23 @@ async function getPost() {
       minute: '2-digit',
     });
 
-    const postElement = document.createElement("div");
-    postElement.classList.add("listing-details");
-    postElement.innerHTML = `
-      <img src="${media}" class="img-fluid" />
-      <h1>${title}</h1>
-      <p>${tags}</p>
-      <p>${description}</p>
-      <p>Deadline: ${formattedDate} ${formattedTime}</p>
+    const listingImage = document.createElement("div");
+    listingImage.classList.add("col", "col-12", "col-md-6", "listingImage");
+    listingImage.innerHTML = `
+        <img src="${media}" class="img-fluid" />
+    `;
+
+    const listingDetails = document.createElement("div");
+    listingDetails.classList.add("col", "col-12", "col-md-6", "listingDetails");
+    listingDetails.innerHTML = `
+        <h1>${title}</h1>
+        <p>${tags}</p>
+        <p>${description}</p>
+        <p>Deadline: <br>${formattedDate} ${formattedTime}</br></p>
     `;
 
     const bidsContainer = document.createElement("div");
-    bidsContainer.classList.add("bids-container");
+    bidsContainer.classList.add("col", "col-12", "mt-5", "bids");
 
     if (Array.isArray(bids) && bids.length > 0) {
       bids.forEach((bid) => {
@@ -68,12 +72,16 @@ async function getPost() {
       bidsContainer.appendChild(noBidsElement);
     }
 
-    postElement.appendChild(bidsContainer);
+    const row = document.createElement("div");
+    row.classList.add("row", "my-5");
+    row.appendChild(listingImage);
+    row.appendChild(listingDetails);
+    row.appendChild(bidsContainer);
+    postContainer.appendChild(row);
 
-    postContainer.appendChild(postElement);
   } catch (error) {
     console.log(error);
   }
 }
-// Call the getPost function to retrieve and display the post.
-getPost();
+// Call the getListing function to retrieve and display the post.
+getListing();

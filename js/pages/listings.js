@@ -2,23 +2,22 @@
 import { API_BASE_URL } from "/js/api/api_base_url.js";
 import { fetchWithToken } from "/js/api/authentication.js";
 
-const API_POSTS_URL = API_BASE_URL + "/listings";
-const feedContainer = document.getElementById("all-posts");
+const API_LISTINGS_URL = API_BASE_URL + "/listings";
+const feedContainer = document.getElementById("all-listings");
 const searchInput = document.getElementById("searchInput");
-const filterDropdown = document.getElementById("filterDropdown");
 const searchButton = document.getElementById("searchButton");
 
-let allPosts = [];
+let allListings = [];
 
 function clearFeedContainer() {
   feedContainer.innerHTML = "";
 }
 
-function displayPosts(posts) {
+function displayListings(listings) {
   clearFeedContainer();
 
-  for (const post of posts) {
-    const { id, tags, title, media, endsAt } = post;
+  for (const listing of listings) {
+    const { id, tags, title, media, endsAt } = listing;
 
     const formattedDate = new Date(endsAt).toLocaleDateString(undefined, {
       day: 'numeric',
@@ -31,74 +30,63 @@ function displayPosts(posts) {
       minute: '2-digit',
     });
 
-    const postElement = document.createElement("div");
-    postElement.classList.add("row", "my-3");
-    postElement.innerHTML = `
-        <img src="${media}" class="img-fluid" />
-        <a href="listing.html?id=${id}"
-        <h3>${title}</h3>
-        <p>${tags}</p>
-        <p>Deadline: ${formattedDate} ${formattedTime}</p>
-        </a>
+    const listingElement = document.createElement("div");
+    listingElement.classList.add("col");
+    listingElement.innerHTML = `
+    <div class="card h-100">
+        <img src="${media}" class="card-img-top" />
+        <div class="card-body">
+          <h3 class="card-title">${title}</h3>
+          <p class="card-subtitle">${tags}</p>
+          <p class="card-text">Deadline: 
+          <br>${formattedDate} ${formattedTime}</br>
+          </p>
+        </div>
+        <div class="card-footer">
+        <a href="listing.html?id=${id}" class="card-link">View More</a>
+      </div>
+      </div>
       `;
 
-    feedContainer.appendChild(postElement);
+    feedContainer.appendChild(listingElement);
   }
 }
 
-async function fetchAndDisplayPosts(url) {
+async function fetchAndDisplayListings(url) {
   try {
     const data = await fetchWithToken(url);
 
-    allPosts = data;
+    allListings = data;
 
     data.sort((a, b) => new Date(b.endsAt) - new Date(a.endsAt));
-    displayPosts(allPosts);
+    displayListings(allListings);
   } catch (error) {
     console.error(error);
     feedContainer.innerHTML = "Oh no! An error occurred";
   }
 }
 
-function filterPosts() {
+function filterListings() {
   const searchQuery = searchInput.value.trim().toLowerCase();
-  const selectedFilter = filterDropdown.value;
 
-  if (selectedFilter === "active") {
-    const url = `${API_POSTS_URL}?active=true`;
-    fetchAndDisplayPosts(url);
-  } else if (searchQuery) {
+  if (searchQuery) {
     // Filter by search query
-    const postBySearch = allPosts.filter((post) => {
-      const { title, tags } = post;
+    const listingBySearch = allListings.filter((listing) => {
+      const { title, tags } = listing;
       return (
         title.toLowerCase().includes(searchQuery) ||
         tags.some((tag) => tag.toLowerCase().includes(searchQuery))
       );
     });
-    displayPosts(postBySearch);
+    displayListings(listingBySearch);
   } else {
     // If no filter is selected, display all posts
-    fetchAndDisplayPosts(API_POSTS_URL);
+    fetchAndDisplayListings(API_LISTINGS_URL);
   }
 }
 
 // Add event listeners for filtering by tag and searching
-searchButton.addEventListener("click", filterPosts);
-
-filterDropdown.addEventListener("change", function() {
-  const selectedFilter = filterDropdown.value;
-
-  if (selectedFilter === "active") {
-    const today = new Date();
-    const formattedToday = today.toISOString().split('T')[0];
-    const url = `${API_POSTS_URL}?active=true&endsAt_gte=${formattedToday}`;
-    fetchAndDisplayPosts(url);
-  } else {
-    // If no filter is selected or another filter is chosen, display all posts
-    fetchAndDisplayPosts(API_POSTS_URL);
-  }
-});
+searchButton.addEventListener("click", filterListings);
 
 // Display all posts initially
-fetchAndDisplayPosts(API_POSTS_URL);
+fetchAndDisplayListings(API_LISTINGS_URL);

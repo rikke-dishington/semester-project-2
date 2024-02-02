@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Sign in" />
-        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script defer type="module" src="js/pages/signin.js"></script>
-        <title>Sign in to your account</title>
-    </head>
-    <body>
-        <main>
-            <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Sign in</h1>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <form action="/profile">
-                        <div class="col-12 mt-4">
-                            <label for="email" class="form-label">Email</label>
-                            <input
-                            type="email"
-                            class="form-control"
-                            id="email"
-                            name="email"
-                            placeholder=""
-                            required
-                            />
-                        </div>
-                        <div class="col-12 mt-4">
-                            <label for="password" class="form-label">Password</label>
-                            <input
-                            type="password"
-                            class="form-control"
-                            id="password"
-                            name="password"
-                            placeholder=""
-                            required
-                            minlength="8"
-                            />
-                        </div>
-                        <div class="col-12 mt-5">
-                            <button type="button" class="btn btn-primary" id="signin-button">Sign in</button>
-                        </div>
-                        <div id="error-message" style="color: red"></div>
-                    </form>
-                    <div class="col-12 mt-4">
-                        <p>
-                            Don't have an account yet? <a href="register.html">Sign up</a>
-                        </p>
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Listings" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <script defer type="module" src="js/pages/listings.js"></script>
+    <title>Discover or add a new listing</title>
+  </head>
+  <body class="bg-light">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="index.html">Auction</a>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="index.html">Listings</a>
+            </li>
+          </ul>
+          <a
+            class="btn btn-light text-primary mx-3"
+            href="signin.html"
+            role="button"
+            >Sign In</a
+          >
+          <a
+            class="btn btn-light text-primary mx-3"
+            href="#"
+            role="button"
+            id="profile-link"
+            >Profile</a
+          >
+          <a
+            class="btn btn-light text-primary mx-3"
+            href="new-listing.html"
+            role="button"
+            >New Listing</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-2 my-5">
+            <div class="col">
+              <h1>Listings</h1>
             </div>
-        </main>
-        <footer class="bg-primary text-center text-light p-2">
-            ©BrandName 2023
-        </footer>
-    </body>
+            <div class="col d-flex justify-content-end">
+              <label for="search"></label>
+              <input type="text" id="searchInput" placeholder="Search..." />
+              <button class="btn btn-primary text-light" id="searchButton">Search</button>
+            </div>          
+          </div>
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 gx-4 gy-4" id="all-listings"></div>
+        </div>
+    </main>
+    <footer class="bg-primary text-center text-light p-3">© Auction 2024</footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
