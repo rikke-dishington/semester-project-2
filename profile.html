@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Profile" />
-        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script defer type="module" src="js/pages/profile.js"></script>
-        <title>Profile</title>
-  <body>
-    <header class="bg-primary">
-      <nav class="navbar navbar-expand-lg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Profile" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <script defer type="module" src="js/pages/profile.js"></script>
+    <title>Profile</title>
+  <body class="bg-light">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="listings.html">Auction</a>
+          <a class="navbar-brand text-light" href="index.html">Auction</a>
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link text-light" href="listings.html">Listings</a>
+              <a class="nav-link text-light" href="index.html">Listings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="#" id="profile-link">Profile</a>
             </li>
           </ul>
           <a
+            class="btn btn-light text-primary mx-3"
+            href="signin.html"
+            role="button"
+            >Sign In</a
+          >
+          <a
             class="btn btn-light text-primary"
             href="new-listing.html"
             role="button"
-            >New Post</a
+            >New Listing</a
           >
         </div>
       </nav>
     </header>
     <main>
         <div class="container mt-5">
-            <div id=profile-container>
-            </div>
+            <div id=profile-container></div>
         </div>
     </main>
-    <footer class="bg-primary text-center text-light p-2">
-      ©BrandName 2023
-    </footer>
+    <footer class="bg-primary text-center text-light p-3">© Auction 2024</footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
