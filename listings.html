@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Listings" />
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script defer type="module" src="js/pages/listings.js"></script>
+        <title>Discover or add a new listing</title>
+    </head>
+  <body>
+    <header class="bg-primary">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="listings.html">Auction</a>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="listings.html">Listings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#" id="profile-link">Profile</a>
+            </li>
+          </ul>
+          <a
+            class="btn btn-light text-primary"
+            href="new-listing.html"
+            role="button"
+            >New Post</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container mt-5">
+          <div class="row row-cols-3 m-3">
+            <div class="col mt-3">
+              <h1>Listings</h1>
+            </div>
+            <div class="col mt-3">
+              <label for="search">Search:</label>
+              <input type="text" id="searchInput" placeholder="Search..." />
+              <button class="btn btn-primary" id="searchButton">Search</button>
+            </div>
+            <div class="col mt-3">
+              <select class="form-select" id="filterDropdown">
+                <option value="all">All Listings</option>
+                <option value="active">Active Listings</option>
+              </select>
+            </div>            
+          </div>
+          <div class="row row-cols-3 m-3" id="all-posts"></div>
+        </div>
+    </main>
+    <footer class="bg-primary text-center text-light p-2">© SoMe 2023</footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
