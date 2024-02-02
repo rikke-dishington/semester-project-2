@@ -1,0 +1,70 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+/* Colors */
+$theme-colors: (
+  primary: #232F3E,
+  secondary: #F2F2F2,
+  light: #F2F2F2,
+  dark: #232F3E,
+);
+
+/* Fonts */
+$font-family-base: 'Montserrat', sans-serif;
+
+/* Links */
+$link-color: #232F3E;
+$link-hover-color: #232F3E;
+
+/* General styling */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    margin-top: 4em;
+}
+
+/* Listings Card */
+.card {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+
+    &-img-top {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
+
+    .card-body {
+      flex: 1;
+      background-color: #F2F2F2;
+    }
+
+    .card-title {
+        padding-bottom: 0.5em;
+      }
+
+    .card-subtitle {
+        padding-bottom: 5em;
+    }
+
+    .card-footer {
+        border-top: none;
+        background-color: #F2F2F2;
+    }
+  }
+
+ .new-listing-container {
+    margin-top: 10em;
+    margin-bottom: 10em;
+}
+
+.sign-in-container {
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+  @import "../../node_modules/bootstrap/scss/bootstrap";

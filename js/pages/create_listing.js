@@ -4,20 +4,20 @@ import { API_BASE_URL } from "/js/api/api_base_url.js";
 const API_LISTINGS_URL = API_BASE_URL + "/listings";
 const token = localStorage.getItem("accessToken");
 
-async function createPost(event) {
+async function createListing(event) {
   event.preventDefault();
 
   // Get form input values
-  const title = document.getElementById("postTitle").value;
-  const description = document.getElementById("postDescription").value;
-  const endsAt = document.getElementById("postEndsAt").value;
-  const tag = document.getElementById("postTag").value;
-  const image = document.getElementById("postImage").value;
+  const title = document.getElementById("listingTitle").value;
+  const description = document.getElementById("listingDescription").value;
+  const endsAt = document.getElementById("listingEndsAt").value;
+  const tag = document.getElementById("listingTag").value;
+  const image = document.getElementById("listingImage").value;
   const media = image.split(",").map(url => url.trim());
 
 
-  // Create a new post object
-  const newPost = {
+  // Create a new Listing object
+  const newListing = {
     title: title,
     body: description,
     endsAt: endsAt,
@@ -27,21 +27,21 @@ async function createPost(event) {
 
   try {
     // Make a POST request to the API
-    const postOptions = {
+    const ListingOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(newPost),
+      body: JSON.stringify(newListing),
     };
 
-    const response = await fetch(API_LISTINGS_URL, postOptions);
+    const response = await fetch(API_LISTINGS_URL, ListingOptions);
 
     if (response.ok) {
-      window.location.href = "listings.html";
+      window.location.href = "index.html";
     } else {
-        console.error("Failed to create a new post:", response.status);
+        console.error("Failed to create a new listing:", response.status);
         // Optionally, display an error message to the user
     }
   } catch (error) {
@@ -50,5 +50,5 @@ async function createPost(event) {
 }
 
 // Add an event listener to the form for form submission
-const newPostForm = document.getElementById("newPostForm");
-newPostForm.addEventListener("submit", createPost);
+const newListingForm = document.getElementById("newListingForm");
+newListingForm.addEventListener("submit", createListing);
