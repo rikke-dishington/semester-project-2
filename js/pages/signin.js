@@ -18,17 +18,25 @@ import { API_BASE_URL } from "/js/api/api_base_url.js";
      if (response.status === 200) {
        const json = await response.json();
        const accessToken = json.accessToken;
+       const userName = json.name;
+       const userEmail = json.email;
+       const avatar = json.avatar;
+       const credits = json.credits;
        localStorage.setItem("accessToken", accessToken);
+       localStorage.setItem("userName", userName);
+       localStorage.setItem('email', userEmail);
+       localStorage.setItem('avatar', avatar);
+       localStorage.setItem('credits', credits);
        console.log(json);
-       window.location.href = "/index.html.html";
+       window.location.href = "/index.html";
      } else if (response.status === 401) {
        errorMessageElement.textContent =
          "User does not exist or invalid email/password.";
      } else {
-       errorMessageElement.textContent = "An error occurred.";
+       errorMessageElement.textContent = "User does not exist or invalid email/password.";
      }
    } catch (error) {
-     errorMessageElement.textContent = "An error occurred.";
+     errorMessageElement.textContent = "User does not exist or invalid email/password.";
    }
  }
  

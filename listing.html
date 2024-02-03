@@ -38,6 +38,16 @@
     </header>
     <main>
       <div class="container" id="post-container"></div>
+      <div id="bids-container"></div>
+      <div class="col-12 mt-5">
+        <form id="bid-form">
+          <div class="mb-3">
+            <label for="bidAmount" class="form-label">Bid Amount:</label>
+            <input type="number" class="form-control" id="bidAmount" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Place Bid</button>
+        </form>
+      </div>
     </main>
     <footer class="bg-primary text-center text-light p-3">© Auction 2024</footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
