@@ -3,12 +3,8 @@ import { API_BASE_URL } from "/js/api/api_base_url.js";
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const bids = params.get("_bids");
 const API_LISTINGS_URL = API_BASE_URL + "/listings/";
 const API_LISTING_URL = `${API_LISTINGS_URL}${id}`;
-const API_LISTING_BIDS_URL = `${API_LISTING_URL}/${bids}`;
-const token = localStorage.getItem("accessToken");
-const postContainer = document.getElementById("post-container");
 
 async function getListing() {
   try {
@@ -33,13 +29,13 @@ async function getListing() {
     });
 
     const listingImage = document.createElement("div");
-    listingImage.classList.add("col", "col-12", "col-md-6", "listingImage");
+    listingImage.classList.add("col", "col-md-6");
     listingImage.innerHTML = `
-      <img src="${media}" class="img-fluid" />
+      <img src="${media}" id="listingImage" />
     `;
 
     const listingDetails = document.createElement("div");
-    listingDetails.classList.add("col", "col-12", "col-md-6", "listingDetails");
+    listingDetails.classList.add("col", "col-md-6");
     listingDetails.innerHTML = `
       <h1>${title}</h1>
       <p>${tags}</p>
@@ -47,11 +43,9 @@ async function getListing() {
       <p>Deadline: <br>${formattedDate} ${formattedTime}</br></p>
     `;
 
-    const row = document.createElement("div");
-    row.classList.add("row", "my-5");
-    row.appendChild(listingImage);
-    row.appendChild(listingDetails);
-    postContainer.appendChild(row);
+    const parentContainer = document.getElementById("listingDetails");
+    parentContainer.appendChild(listingImage);
+    parentContainer.appendChild(listingDetails);
   } catch (error) {
     console.error(error);
   }

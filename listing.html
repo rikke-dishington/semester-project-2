@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sign in" />
     <link rel="stylesheet" href="dist/css/styles.css" />
+    <script defer type="module" src="js/pages/signout.js"></script>
+    <script defer type="module" src="js/pages/new_bid.js"></script>
     <script defer type="module" src="js/pages/listing.js"></script>
     <title>View a listing</title>
   </head>
@@ -17,36 +19,50 @@
             <li class="nav-item">
               <a class="nav-link text-light" href="index.html">Listings</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#" id="profile-link">Profile</a>
-            </li>
           </ul>
           <a
             class="btn btn-light text-primary mx-3"
-            href="signin.html"
-            role="button"
-            >Sign In</a
-          >
-          <a
-            class="btn btn-light text-primary"
             href="new-listing.html"
             role="button"
             >New Listing</a
           >
+          <a
+          class="btn btn-light text-primary mx-3"
+          href="profile.html"
+          role="button"
+          id="profile-link"
+          >Profile</a
+        >
+          <a
+            class="btn btn-light text-primary mx-3"
+            href="signin.html"
+            role="button"
+            id="signinButton"
+            >Sign In</a
+          >
+          <a
+          class="btn btn-light text-primary mx-3"
+          role="button"
+          id="signoutButton"
+          >Sign Out</a
+        >
         </div>
       </nav>
     </header>
     <main>
-      <div class="container" id="post-container"></div>
-      <div id="bids-container"></div>
-      <div class="col-12 mt-5">
-        <form id="bid-form">
-          <div class="mb-3">
-            <label for="bidAmount" class="form-label">Bid Amount:</label>
-            <input type="number" class="form-control" id="bidAmount" required>
+      <div class="container d-flex flex-column align-items-center" id="listingContainer" style="height: 100vh">
+        <div class="row row-cols-1" id="listingDetails"></div>
+        <div class="row row-cols-1">
+          <div class="col">
+            <form id="bidForm">
+                <label for="bid" class="form-label">Bid Amount:</label>
+                <input type="number" class="form-control" id="bid" required>
+                <p id="bidError"></p>
+              <button type="submit" class="btn btn-primary">Place Bid</button>
+            </form>
           </div>
-          <button type="submit" class="btn btn-primary">Place Bid</button>
-        </form>
+        </div>
+        <div class="row" id="bids-container"></div>
       </div>
     </main>
     <footer class="bg-primary text-center text-light p-3">© Auction 2024</footer>
