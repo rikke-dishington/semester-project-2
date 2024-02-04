@@ -119,3 +119,51 @@ async function fetchBids() {
      // Implement your modal logic here
      console.log("Open Avatar Edit Modal");
  }
+
+
+
+
+
+
+
+// Attach event listener to the "Edit Avatar" button
+const editAvatarButton = document.getElementById("editAvatarButton");
+editAvatarButton.addEventListener("click", handleEditAvatar);
+
+function handleEditAvatar() {
+    // Toggle the visibility of the edit avatar form
+    const isFormVisible = editAvatarForm.style.display !== "none";
+    editAvatarForm.style.display = isFormVisible ? "none" : "block";
+  }
+
+// Update the avatar
+const errorMessageElement = document.getElementById("error-message");
+ 
+ async function updateAvatar(url, data) {
+   try {
+     const putAvatar = {
+       method: "PUT",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(data)
+     };
+ 
+     const response = await fetch(url, putAvatar);
+     console.log(response);
+  
+     if (response.ok) {
+       const json = await response.json();
+       console.log("Avatar updated successfully:", json);
+     } else {
+       errorMessageElement.textContent = "Invalid url";
+     }
+   } catch (error) {
+     errorMessageElement.textContent = "Invalid url";
+   }
+ }
+ 
+ document.getElementById("updateAvatarButton").addEventListener("click", () => {
+   const avatar = document.getElementById("avatar-url").value.trim();
+   updateAvatar(`${API_PROFILE_URL}/media`, avatar);
+ });

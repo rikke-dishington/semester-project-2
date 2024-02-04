@@ -57,14 +57,20 @@ footer {
     }
   }
 
- .new-listing-container {
+ .new-listing-container, 
+ .sign-in-container {
     margin-top: 10em;
     margin-bottom: 10em;
 }
 
-.sign-in-container {
-  margin-top: 10em;
-  margin-bottom: 10em;
+#profile-container {
+   margin-top: 10em;
+   margin-bottom: 10em;
+}
+
+#profile-avatar {
+  max-height: 500px;
+  width: 100%;
 }
 
   @import "../../node_modules/bootstrap/scss/bootstrap";
