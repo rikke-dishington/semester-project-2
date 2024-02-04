@@ -7,6 +7,7 @@ $theme-colors: (
   secondary: #F2F2F2,
   light: #F2F2F2,
   dark: #232F3E,
+  light-blue: #146EB4
 );
 
 /* Fonts */
@@ -24,6 +25,11 @@ $link-hover-color: #232F3E;
 
 footer {
     margin-top: 4em;
+}
+
+/* Buttons */
+.custom-border {
+  border: 1px solid #F2F2F2;
 }
 
 /* Listings Card */
