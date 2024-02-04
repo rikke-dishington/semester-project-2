@@ -6,7 +6,6 @@ An auction site is looking to launch a website where users can add items to be b
 When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can make bids on listings.
 
 ## Table of Contents
-* [Workflow Status Badges](#workflow-status-badges)
 * [Requirements](#requirements)
 * [User stories](#user-stories)
 * [Technical Restrictions](#technical-restrictions)
@@ -16,9 +15,6 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 * [Dependencies](#dependencies)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Testing](#testing)
-
-## Workflow Status Badges
 
 ## Requirements
 
@@ -65,12 +61,17 @@ When a new user joins the website, they are given 1000 credits to use on the sit
  ## Delivery
 
 ### Links
-* [GitHub Projects - Gantt chart for project timing](https://github.com/users/rikke-dishington/projects/1)
+* [GitHub Projects - Gantt chart for project timing](https://github.com/users/rikke-dishington/projects/2)
 * [Trello - Kanban project board](https://trello.com/invite/b/yYJEHW6m/ATTI5bcf6db2f9b25d6b7a74086e5ec0a9dc6ADB21EA/semester-project-2)
 * [Adobe XD - Style guide](https://xd.adobe.com/view/c887df51-e9b8-4d07-b19d-4d8cbb391046-9dd4/?fullscreen)
 * [Adobe XD - Design prototype](https://xd.adobe.com/view/82ca242b-6445-4fa5-90e2-608bfa69c13d-d799/?fullscreen)
 * [GitHub - Repository link](https://github.com/rikke-dishington/semester-project-2)
 * [Netlify - Hosted application demo link](https://beamish-flan-146217.netlify.app)
+
+### Technology stack
+* Bootstrap
+* SCSS
+* Javascript
 
 ### Dependencies
 * Bootstrap: ^5.3.2
@@ -90,15 +91,3 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 
 ### Usage
 1. Build the project with npm run build.
-2. Start the development server with npm run dev.
-3. Tests are run using npm run test
-4. Open the application in your browser.
-
-### Testing
-To run all tests: npm run test
-
-#### Unit testing:
-npm run test-unit
-
-#### End-to-end testing:
-npm run test-e2e-cli
