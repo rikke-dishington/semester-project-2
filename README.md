@@ -1,4 +1,6 @@
 # Semester Project 2
+<img width="1325" alt="Screenshot 2024-02-04 at 23 48 31" src="https://github.com/rikke-dishington/semester-project-2/assets/85433495/273c7a0e-5ac6-440f-8d63-d27d4f3f0aa9">
+
 
 ## Brief
 An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
