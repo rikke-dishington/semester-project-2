@@ -6,7 +6,6 @@
     <meta name="description" content="Listings" />
     <link rel="stylesheet" href="dist/css/styles.css" />
     <script defer type="module" src="js/pages/signout.js"></script>
-    <script defer type="module" src="js/pages/profile_button.js"></script>
     <script defer type="module" src="js/pages/listings.js"></script>
     <title>Discover or add a new listing</title>
   </head>
@@ -28,6 +27,7 @@
           >
           <a
           class="btn btn-light text-primary mx-3"
+          href="profile.html"
           role="button"
           id="profile-link"
           >Profile</a
@@ -49,6 +49,9 @@
       </nav>
     </header>
     <main>
+      <div class="container">
+        <button class="btn btn-primary text-light" id="editAvatarButton">Edit Avatar</button>
+      </div>
       <div class="container">
           <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-2 my-5">
             <div class="col">
