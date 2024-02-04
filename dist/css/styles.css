@@ -39,18 +39,21 @@ footer {
 }
 
 .new-listing-container,
-.sign-in-container {
-  margin-top: 10em;
-  margin-bottom: 10em;
-}
-
-#profile-container {
+.sign-in-container,
+#profile-container,
+#post-container,
+#listingContainer {
   margin-top: 10em;
   margin-bottom: 10em;
 }
 
 #profile-avatar {
   max-height: 500px;
+  width: 100%;
+}
+
+#listingImage {
+  max-height: 600px;
   width: 100%;
 }
 
