@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="New listing" />
     <link rel="stylesheet" href="dist/css/styles.css" />
-    <script defer type="module" src="js/pages/create_listing.js"></script>
+    <script defer type="module" src="js/buttons.js"></script>
+    <script defer type="module" src="js/signout.js"></script>
+    <script defer type="module" src="js/create_listing.js"></script>
     <title>Publish a new listing</title>
   </head>
   <body class="bg-light">
@@ -13,20 +15,43 @@
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand text-light" href="index.html">Auction</a>
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="index.html">Listings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="#" id="profile-link">Profile</a>
-            </li>
-          </ul>
-          <a
-            class="btn btn-light text-primary"
-            href="new-listing.html"
+          <button class="navbar-toggler border custom-border bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="index.html">Listings</a>
+              </li>
+            </ul>
+            <a
+              class="btn btn-dark text-secondary border custom-border mx-3"
+              href="new-listing.html"
+              role="button"
+              id="newListingButton"
+              >New Listing</a
+            >
+            <a
+            class="btn btn-dark text-secondary border custom-border mx-3"
+            href="profile.html"
             role="button"
-            >New Listing</a
+            id="profile-link"
+            >Profile</a
           >
+            <a
+              class="btn btn-light-blue text-secondary mx-3"
+              href="signin.html"
+              role="button"
+              id="signinButton"
+              >Sign In</a
+            >
+            <a
+            class="btn btn-light-blue text-secondary mx-3"
+            role="button"
+            id="signoutButton"
+            >Sign Out</a
+          >
+          </div>
         </div>
       </nav>
     </header>
