@@ -36,8 +36,17 @@
       </nav>
     </header>
     <main>
-        <div class="container mt-5">
+        <div class="container">
             <div id=profile-container></div>
+            <button class="btn btn-primary" id="editAvatarButton">Edit Avatar</button>
+              <div id="edit-avatar-form" class="col-12 text-center mt-3" style="display: none;">
+                <form id="avatar-upload-form">
+                  <label for="avatar-url">Choose a new avatar:</label>
+                  <input type="url" id="avatar-url" placeholder="https://example.com/avatar.jpg" required>
+                  <button type="submit" class="btn btn-primary" id="updateAvatarButton">Update Avatar</button>
+                  <div id="error-message" style="color: red"></div>
+                </form>
+              </div>
         </div>
     </main>
     <footer class="bg-primary text-center text-light p-3">© Auction 2024</footer>

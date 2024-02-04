@@ -100,3 +100,22 @@ async function fetchBids() {
     await fetchBids(API_LISTING_BIDS_URL, newListing);
   
   
+
+
+
+     // Add event listener for the "Edit Avatar" button
+     const editAvatarBtn = document.getElementById("edit-avatar-btn");
+     editAvatarBtn.addEventListener("click", () => {
+         // Open a modal or navigate to the avatar editing page
+         // You can implement the avatar editing functionality here
+         // (e.g., using a form or a modal for uploading a new avatar)
+         // For simplicity, let's assume a modal opens for avatar editing.
+         openAvatarEditModal();
+     });
+ }
+ 
+ // Function to open a modal for avatar editing (placeholder)
+ function openAvatarEditModal() {
+     // Implement your modal logic here
+     console.log("Open Avatar Edit Modal");
+ }
