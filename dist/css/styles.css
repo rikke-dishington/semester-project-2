@@ -38,14 +38,20 @@ footer {
   background-color: #F2F2F2;
 }
 
-.new-listing-container {
+.new-listing-container,
+.sign-in-container {
   margin-top: 10em;
   margin-bottom: 10em;
 }
 
-.sign-in-container {
+#profile-container {
   margin-top: 10em;
   margin-bottom: 10em;
+}
+
+#profile-avatar {
+  max-height: 500px;
+  width: 100%;
 }
 
 /*!
@@ -167,6 +173,7 @@ footer {
 }
 
 [data-bs-theme=dark] {
+  color-scheme: dark;
   --bs-body-color: #dee2e6;
   --bs-body-color-rgb: 222, 226, 230;
   --bs-body-bg: #212529;
@@ -2391,6 +2398,7 @@ textarea.form-control-lg {
   background-position: center;
   background-size: contain;
   border: var(--bs-border-width) solid var(--bs-border-color);
+  print-color-adjust: exact;
 }
 .form-check-input[type=checkbox] {
   border-radius: 0.25em;
