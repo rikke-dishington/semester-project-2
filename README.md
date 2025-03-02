@@ -2,21 +2,27 @@
 <img width="1325" alt="Screenshot 2024-02-04 at 23 48 31" src="https://github.com/rikke-dishington/semester-project-2/assets/85433495/273c7a0e-5ac6-440f-8d63-d27d4f3f0aa9">
 
 
-## Brief
+## Description
 An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
 
 When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can make bids on listings.
 
 ## Table of Contents
-* [Requirements](#requirements)
-* [User stories](#user-stories)
-* [Technical Restrictions](#technical-restrictions)
-* [Approved resources](#approved-resources)
 * [Delivery](#delivery)
 * [Links](#links)
+* [Requirements](#requirements)
+* [User stories](#user-stories)
+* [Technical stack](#technical_stack)
+* [Technical Restrictions](#technical-restrictions)
+* [Approved resources](#approved-resources)
 * [Dependencies](#dependencies)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Getting started](#getting_started)
+* [Development guidelines](#development_guidelines)
+* [Testing](#testing)
+* [Building for production](#building_for_production)
+* [Contributing](#contributing)
 
 ## Requirements
 
