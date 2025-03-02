@@ -2,9 +2,7 @@
 <img width="1325" alt="Screenshot 2024-02-04 at 23 48 31" src="https://github.com/rikke-dishington/semester-project-2/assets/85433495/273c7a0e-5ac6-440f-8d63-d27d4f3f0aa9">
 
 ## Description
-An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
-
-When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can make bids on listings.
+An auction site where users can add items for auction and bid on items. New users receive 1000 credits upon registration, which they can use for bidding. Credits can be earned by selling items. While non-registered users can browse listings, only registered users can participate in bidding.
 
 ## Table of Contents
 * [Delivery](#delivery)
@@ -24,16 +22,21 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 
 ## Features
 
-### User stories
-* A user with a stud.noroff.no email may register
-* A registered user may login
-* A registered user may logout
-* A registered user may update their avatar
-* A registered user may view their total credit
-* A registered user may create a Listing with a title, deadline date, media gallery and description
-* A registered user may add a Bid to another user’s Listing
-* A registered user may view Bids made on a Listing
-* An unregistered user may search through Listings
+### User Authentication
+* Registration with stud.noroff.no email
+* User login/logout functionality
+* Profile avatar management
+* Credit balance tracking
+
+### Auction Features
+* Create listings with:
+  - Title
+  - Deadline date
+  - Media gallery
+  - Description
+* Place bids on active listings
+* View bid history
+* Search functionality (available to all users)
 
 ## Technical Stack
 
